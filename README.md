@@ -113,5 +113,8 @@ tools/                gerador de ícone e script de publicação
 
 ## Licença
 
-MIT. Copyright (c) 2026 João Pedro Villas Boas de Carvalho
-([@johncarvalhonx](https://github.com/johncarvalhonx)). Texto completo em [LICENSE](LICENSE).
+MIT. Copyright (c) 2026 [LICENSE](LICENSE).
+
+## Autor
+
+Criado por João Pedro Villas Boas de Carvalho.
