@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>StayAwake</AssemblyName>
+    <RootNamespace>StayAwake</RootNamespace>
+    <Version>1.0.0</Version>
+    <Product>StayAwake</Product>
+    <Company>StayAwake</Company>
+    <Description>Mantem o Windows e apps como o Teams enxergando voce como disponivel.</Description>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\stayawake.ico</ApplicationIcon>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <!-- O DPI vem do manifesto porque a janela e WPF, nao WinForms. -->
+    <NoWarn>$(NoWarn);WFAC010</NoWarn>
+    <!-- Utilitário de bandeja: GC workstation e sem thread concorrente reservando heap. -->
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+  </PropertyGroup>
+
+  <!-- WinForms entra so pelo icone da bandeja. Sem isso os usings implicitos
+       de System.Windows.Forms e System.Drawing brigam com os tipos do WPF. -->
+  <ItemGroup>
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+</Project>
